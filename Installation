@@ -1,0 +1,16 @@
+Copy all module files to /etc/nixos/modules/
+Copy qtile-autostart.sh to /etc/nixos/
+Paste the configuration.nix to /etc/nixos/
+
+Run:
+sudo nixos-rebuild switch
+
+
+This gives you a fully modular, clean setup:
+Qtile + Picom + Rofi
+Chrome + 1Password + AnyDesk
+VLC + HEVC/HEIF/AV1 codecs
+Thunar + SMB support
+AMD GPU optimization
+LightDM + printing + Bluetooth
+User and fonts ready

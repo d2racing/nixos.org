@@ -1,0 +1,37 @@
+=============================
+     QTILE KEYBINDINGS
+=============================
+
+--- WINDOWS MANAGEMENT ---
+Mod + Enter     = Terminal (alacritty)
+Mod + W         = Close window
+Mod + F         = Toggle fullscreen
+Mod + R         = Restart Qtile
+Mod + Shift + R = Reload config
+
+Mod + J         = Focus next window
+Mod + K         = Focus previous window
+Mod + H         = Shrink window
+Mod + L         = Grow window
+Mod + Space     = Toggle floating
+
+--- WORKSPACES ---
+Mod + 1..0      = Switch to workspace
+Mod + Shift+1..0= Move window to workspace
+
+--- APPLICATIONS ---
+Mod + B         = Google Chrome
+Mod + D         = Rofi app launcher
+Mod + E         = Thunar (file manager)
+Mod + V         = VLC
+
+--- SCREENSHOTS ---
+Print           = Full screenshot to ~/Pictures
+Shift + Print   = Area screenshot (slop + grim)
+
+--- LAYOUT CONTROL ---
+Mod + Tab       = Next layout
+Mod + Shift+Tab = Previous layout
+
+--- MISC ---
+Mod + Shift + Q = Logout menu

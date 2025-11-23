@@ -1,0 +1,69 @@
+from libqtile import bar, widget
+
+def init_widgets():
+    return [
+        widget.CurrentLayout(
+            foreground=colors["blue"],
+            fmt="   {}",
+            padding=10,
+        ),
+        widget.Sep(linewidth=0, padding=10),
+
+        widget.GroupBox(
+            fontsize=16,
+            active=colors["fg"],
+            inactive=colors["fg_alt"],
+            highlight_method="block",
+            rounded=True,
+            this_current_screen_border=colors["mauve"],
+            padding=5,
+        ),
+        widget.Sep(linewidth=0, padding=10),
+
+        widget.Prompt(),
+
+        widget.WindowName(
+            foreground=colors["fg"],
+            max_chars=40,
+        ),
+
+        widget.Systray(),
+        widget.Sep(linewidth=0, padding=10),
+
+        widget.CPU(
+            format="  {load_percent}%",
+            foreground=colors["yellow"],
+            padding=10,
+        ),
+
+        widget.Memory(
+            format="  {MemUsed:.0f}M",
+            foreground=colors["green"],
+            padding=10,
+        ),
+
+        widget.Clock(
+            format="  %Y-%m-%d %H:%M",
+            foreground=colors["blue"],
+            padding=10,
+        ),
+
+        widget.QuickExit(
+            default_text="",
+            countdown_format="{}",
+            foreground=colors["red"],
+            padding=10,
+        ),
+    ]
+
+def init_bar():
+    return bar.Bar(
+        init_widgets(),
+        32,
+        background=colors["bg"],
+        margin=[5, 5, 5, 5],
+    )
+
+screens = [
+    Screen(top=init_bar())
+]

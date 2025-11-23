@@ -1,0 +1,8 @@
+/etc/nixos/
+│── configuration.nix
+│── hardware-configuration.nix
+│── modules/
+    │── qtile.nix
+    │── packages.nix
+    │── hardware-amd.nix
+    │── services.nix

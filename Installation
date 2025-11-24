@@ -1,3 +1,11 @@
+# sudo -i
+# ping mynixos.org
+# cfdisk /dev/sda
+
+sda1 EFI 2G
+sda2 SWAP 8 G
+sda3 ext4 rest
+
 Copy all module files to /etc/nixos/modules/
 Copy qtile-autostart.sh to /etc/nixos/
 Paste the configuration.nix to /etc/nixos/

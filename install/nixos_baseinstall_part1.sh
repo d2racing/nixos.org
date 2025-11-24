@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo 'start of baseinstall_part1.sh'
 
 export BOOT_DISK="/dev/sda"

@@ -11,7 +11,6 @@ sda3 ext4 rest
 # cd /mnt/scripts/nixos.org/install
 # time ./nixos_baseinstall_part1.sh
 
-# nixos-generate-config --root /mnt
 # nano /mnt/etc/nixos/configuration.nix
 
 Double check for boot.loader.systemd-boot.enable = true

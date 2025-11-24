@@ -86,7 +86,9 @@ btop
 # nixos-install
 # nixos-enter --root /mnt -c 'passwd sylvain'
 
+# reboot
 
+# nixos-rebuild switch
 
 
 

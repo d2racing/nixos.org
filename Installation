@@ -6,6 +6,12 @@ sda1 EFI 2G
 sda2 SWAP 8 G
 sda3 ext4 rest
 
+# mkdir /mnt/scripts
+# git clone https://github.com/d2racing/nixos.org.git
+# cd /mnt/scripts/nixos.org/install
+# time ./nixos_baseinstall_part1.sh
+
+
 Copy all module files to /etc/nixos/modules/
 Copy qtile-autostart.sh to /etc/nixos/
 Paste the configuration.nix to /etc/nixos/

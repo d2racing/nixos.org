@@ -88,13 +88,48 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+  # outils 
+     wget
      neofetch
      git
+     htop
      btop
+     alacritty
+  # applications    
      google-chrome
      pkgs._1password-gui
      pkgs.anydesk
+  # media 
+     pkgs.vlc
+     pkgs.ffmpeg-full   
+     pkgs.libheif
+     pkgs.libaom
+     pkgs.dav1d
+     pkgs.libvpx
+     pkgs.fdk_aac
+     pkgs.x264
+     pkgs.x265
+     pkgs.vulkan-tools
+     pkgs.vulkan-loader
+     pkgs.libva-utils
+  # XFCE 
+     xfce.thunar
+     xfce.thunar-volman
+     xfce.ristretto
+  # Samba
+     pkgs.gvfs
+     pkgs.cifs-utils
+  # Filesystem
+     pkgs.exfatprogs
+     pkgs.btrfs-progs
+  # Utilz
+     pkgs.unzip
+     pkgs.p7zip
+     pkgs.imagemagick
+     pkgs.networkmanagerapplet
+  # fonts
+     pkgs.noto-fonts
+     pkgs.noto-fonts-color-emoji
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

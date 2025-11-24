@@ -33,5 +33,6 @@ mount /dev/$ROOT_DEVICE /mnt
 mount --mkdir $BOOT_DEVICE /mnt/boot
 swapon $SWAP_DEVICE
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+lsblk
 
 echo 'end of baseinstall_part1.sh' 

@@ -11,14 +11,20 @@ sda3 ext4 rest
 # cd /mnt/scripts/nixos.org/install
 # time ./nixos_baseinstall_part1.sh
 
+# nixos-generate-config --root /mnt
+# nano /mnt/etc/nixos/configuration.nix
+
+Double check for boot.loader.systemd-boot.enable = true
+check for alice user name
+
+# nixos-enter --root /mnt -c 'passwd sylvain'
 
 Copy all module files to /etc/nixos/modules/
 Copy qtile-autostart.sh to /etc/nixos/
 Paste the configuration.nix to /etc/nixos/
 
 Run:
-sudo nixos-rebuild switch
-
+# sudo nixos-rebuild switch
 
 This gives you a fully modular, clean setup:
 Qtile + Picom + Rofi

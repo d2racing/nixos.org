@@ -35,4 +35,5 @@ swapon $SWAP_DEVICE
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 lsblk
 
+nixos-generate-config --root /mnt
 echo 'end of baseinstall_part1.sh' 

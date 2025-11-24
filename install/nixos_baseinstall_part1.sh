@@ -30,8 +30,7 @@ mkfs.ext4 -L nixos $ROOT_DEVICE
 mkswap -L swap $SWAP_DEVICE
 
 mount /dev/$ROOT_DEVICE /mnt
-mkdir -p /mnt/boot
-mount -o umask=077 $BOOT_DEVICE /mnt/boot
+mount --mkdir $BOOT_DEVICE /mnt/boot
 swapon $SWAP_DEVICE
 
 echo 'end of baseinstall_part1.sh' 

@@ -36,6 +36,16 @@
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
+  services.gvfs.enable = true;
+
+  programs.thunar = {
+           enable = true;
+           plugins = with pkgs.xfce; [
+                     thunar-archive-plugin
+                     thunar-volman
+                     thunar-media-tags-plugin
+                                     ];                    
+                    };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -101,7 +111,8 @@
      pkgs.anydesk
   # media 
      pkgs.vlc
-     pkgs.ffmpeg-full   
+     pkgs.ffmpeg-full
+     pkgs.ffmpegthumbnailer   
      pkgs.libheif
      pkgs.libaom
      pkgs.dav1d
@@ -114,7 +125,9 @@
      pkgs.libva-utils
   # XFCE 
      xfce.thunar
+     xfce.thunar-archive-plugin
      xfce.thunar-volman
+     xfce.tumbler
      xfce.ristretto
   # Samba
      pkgs.gvfs
@@ -130,7 +143,16 @@
   # fonts
      pkgs.noto-fonts
      pkgs.noto-fonts-color-emoji
-  ];
+     pkgs.signal-desktop
+     pkgs.discord
+  # video
+     pkgs.mesa
+     pkgs.driversi686Linux.mesa
+     pkgs.driversi686Linux.mesa-demos     
+     pkgs.libva-vdpau-driver
+     pkgs.driversi686Linux.libvdpau-va-gl
+     pkgs.amdvlk
+   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

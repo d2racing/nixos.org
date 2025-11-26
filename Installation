@@ -38,6 +38,44 @@ Switching to unstable :
 
 
 
+# mkdir -p /etc/nixos/secrets
+# nano /etc/nixos/secrets/nas-credentials
+username=yyyy
+password=xxxx
+
+# chmod 600 /etc/nixos/secrets/nas-credentials
+
+
+{
+  fileSystems."/mnt/nas" = {
+    device = "//192.168.2.250/LOGICIELS";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/nixos/secrets/nas-credentials"
+      "rw"
+      "iocharset=utf8"
+      "vers=3.0"
+      "uid=1000"
+      "gid=1000"
+    ];
+  };
+
+  fileSystems."/mnt/linux" = {
+    device = "//192.168.2.250/LINUX";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/nixos/secrets/nas-credentials"
+      "rw"
+      "iocharset=utf8"
+      "vers=3.0"
+      "uid=1000"
+      "gid=1000"
+    ];
+  };
+
+
+
+
 This gives you a fully modular, clean setup:
 Chrome + 1Password + AnyDesk
 VLC + HEVC/HEIF/AV1 codecs

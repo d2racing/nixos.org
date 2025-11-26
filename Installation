@@ -7,10 +7,10 @@ Do a clean install with the LiveCD and install XFCE.
 
 # cp configuration.nix /etc/nixos/
 
+Normal update : 
 # nix-channel --list
-# nixos-rebuild switch 
-# reboot
 # nixos-rebuild switch --upgrade
+# reboot
 
 In case of a major release for example 25.05 to 25.11 :
 # nix-channel --remove nixos && \

@@ -3,26 +3,24 @@ Do a clean install with the LiveCD and install XFCE.
 # mkdir /mnt/scripts
 # nix-shell -p git 
 # git clone https://github.com/d2racing/nixos.org.git
-# cd /mnt/scripts/nixos.org/install
+# cd /mnt/scripts/nixos.org/
 
-# nano /mnt/etc/nixos/configuration.nix
+# cp configuration.nix /etc/nixos/
 
+# nix-channel --list
+# nixos-rebuild switch 
+# reboot
+# nixos-rebuild switch --upgrade
 
+In case of a major release for example 25.05 to 25.11 :
+# nix-channel --list
+# nix-channel --add https://channels.nixos.org/nixos-25.11 nixos
+# nix-channel --list
 # nixos-rebuild switch
-
-
-
-Copy all module files to /etc/nixos/modules/
-Copy qtile-autostart.sh to /etc/nixos/
-Paste the configuration.nix to /etc/nixos/
-
-
-
-Run:
-
+# reboot
+# nixos-rebuild switch --upgrade
 
 This gives you a fully modular, clean setup:
-Qtile + Picom + Rofi
 Chrome + 1Password + AnyDesk
 VLC + HEVC/HEIF/AV1 codecs
 Thunar + SMB support

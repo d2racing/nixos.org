@@ -13,19 +13,16 @@ Do a clean install with the LiveCD and install XFCE.
 # nixos-rebuild switch --upgrade
 
 In case of a major release for example 25.05 to 25.11 :
-# nix-channel --list
-# nix-channel --add https://channels.nixos.org/nixos-25.11 nixos
-# nix-channel --list
-# nixos-rebuild switch
-# reboot
-# nixos-rebuild switch --upgrade
-# nix-collect-garbage -d 
-
-Clean up of the old profiles, keep 10 generations  :
-# nix-env --delete-generations +10 --profile /nix/var/nix/profiles/system && \
+# nix-channel --remove nixos && \
+  nix-channel --add https://channels.nixos.org/nixos-25.11 nixos && \
+  nix-channel --update && \
+  nixos-rebuild switch && \
+  nix-env --delete-generations +10 --profile /nix/var/nix/profiles/system && \
   find /nix/var/nix/profiles/ -maxdepth 1 -type l -name 'system-*-link' \
   ! -exec test -e {} \; -print | xargs -r rm -f && \
-  nixos-rebuild boot
+  nixos-rebuild boot && \
+  nixos-rebuild switch --upgrade && \
+  nix-collect-garbage -d
 
 
 

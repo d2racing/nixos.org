@@ -1,92 +1,12 @@
-# sudo -i
-# ping mynixos.org
-# cfdisk /dev/sda
-
-sda1 EFI 2G
-sda2 SWAP 8 G
-sda3 ext4 rest
+Do a clean install with the LiveCD and install XFCE.
 
 # mkdir /mnt/scripts
+# nix-shell -p git 
 # git clone https://github.com/d2racing/nixos.org.git
 # cd /mnt/scripts/nixos.org/install
-# time ./nixos_baseinstall_part1.sh
 
 # nano /mnt/etc/nixos/configuration.nix
 
-Double check for :
-boot.loader.systemd-boot.enable = true;
-boot.loader.efi.canTouchEfiVariables = true;
-
-Configure : 
-netowrking.hostName = "nixos_7520u";
-networking.networkmanager.enable = true;
-time.timeZone = "America/Toronto";
-i18n.defaultLocale = "fr_CA.UTF-8"
-services.xserver = {
-  enable = true;
-  windowManager.qtile.enable= true;
-  layout = "ca";
-  xkbVariant = "multix";  # French Canadian CSA
-};
-
-check for alice user name
-users.users.alice replace alice with your Name
-
-programs.firefox.enable = true;
-
-search for wget in the code 
-wget
-git 
-neovim
-alacritty
-btop
-# Browsers & productivity
-    google-chrome
-    onepassword
-    anydesk
-
-    # Media
-    vlc
-    ffmpeg-full
-    libheif
-    heif-convert
-    heifthumbnailer
-    aom
-    dav1d
-    libvpx
-    fdk_aac
-    x264
-    x265
-    vulkan-tools
-    vulkan-loader
-    libva-utils
-
-    # File manager + SMB support
-    thunar
-    thunar-volman
-    gvfs
-    gvfs-smb
-    gvfs-nfs
-    cifs-utils
-    exfatprogs
-
-    # Utilities
-    htop
-    git
-    unzip
-    p7zip
-    imagemagick
-    networkmanagerapplet
-
-    # Fonts
-    noto-fonts
-    noto-fonts-emoji
-    nerdfonts
-
-# nixos-install
-# nixos-enter --root /mnt -c 'passwd sylvain'
-
-# reboot
 
 # nixos-rebuild switch
 

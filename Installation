@@ -20,6 +20,13 @@ In case of a major release for example 25.05 to 25.11 :
 # reboot
 # nixos-rebuild switch --upgrade
 
+Clean up of the old profiles, keep 10 generations  :
+# nix-env --list-generations --profile /nix/var/nix/profiles/system
+# nix-env --delete-generations +10 --profile /nix/var/nix/profiles/system && nix-collect-garbage -d
+
+
+
+
 This gives you a fully modular, clean setup:
 Chrome + 1Password + AnyDesk
 VLC + HEVC/HEIF/AV1 codecs

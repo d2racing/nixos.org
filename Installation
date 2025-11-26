@@ -19,6 +19,7 @@ In case of a major release for example 25.05 to 25.11 :
 # nixos-rebuild switch
 # reboot
 # nixos-rebuild switch --upgrade
+# nix-collect-garbage -d 
 
 Clean up of the old profiles, keep 10 generations  :
 # nix-env --delete-generations +10 --profile /nix/var/nix/profiles/system && \

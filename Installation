@@ -48,7 +48,7 @@ password=xxxx
 
 {
   fileSystems."/mnt/nas" = {
-    device = "//192.168.2.250/LOGICIELS";
+    device = "//192.168.x.xxx/LOGICIELS";
     fsType = "cifs";
     options = [
       "credentials=/etc/nixos/secrets/nas-credentials"
@@ -61,7 +61,7 @@ password=xxxx
   };
 
   fileSystems."/mnt/linux" = {
-    device = "//192.168.2.250/LINUX";
+    device = "//192.168.x.xxx/LINUX";
     fsType = "cifs";
     options = [
       "credentials=/etc/nixos/secrets/nas-credentials"

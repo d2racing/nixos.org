@@ -24,6 +24,18 @@ In case of a major release for example 25.05 to 25.11 :
   nixos-rebuild switch --upgrade && \
   nix-collect-garbage -d
 
+Switching to unstable : 
+# nix-channel --remove nixos && \
+  nix-channel --add https://nixos.org/channels/nixos-unstable nixos && \
+  nix-channel --update && \
+  nixos-rebuild switch && \
+  nix-env --delete-generations +30 --profile /nix/var/nix/profiles/system && \
+  find /nix/var/nix/profiles/ -maxdepth 1 -type l -name 'system-*-link' \
+  ! -exec test -e {} \; -print | xargs -r rm -f && \
+  nixos-rebuild boot && \
+  nixos-rebuild switch --upgrade && \
+  nix-collect-garbage -d
+
 
 
 This gives you a fully modular, clean setup:
